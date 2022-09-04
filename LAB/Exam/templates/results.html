@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} Results {% endblock %}
+
+{% block content %}
+<br>
+<div class="row">
+	<div class="col d-flex justify-content-center">
+		{% if passed %}
+			<div class="display-5"> 
+				Congratulations! You passed!
+			</div>
+		{% else %}
+			<div class="display-5"> 
+				Sorry, you have failed your exam. 
+			</div>
+		{% endif %}
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col d-flex justify-content-center">
+		<div class="display-5"> 
+			Your score: {{ points }}/100
+		</div>
+	</div>
+</div>
+<br>
+<div class="row d-flex justify-content-center">
+	<div class="col-1">
+		<a class="btn btn-primary" href="/">Home</a>
+	</div>
+</div>
+
+{% endblock content %}

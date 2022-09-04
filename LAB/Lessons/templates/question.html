@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} Question {% endblock %}
+
+{% block content %}
+<br>
+<div class="row">
+	<div class="col d-flex justify-content-center">
+		{{ question }}
+	</div>
+</div>
+<br>
+<div class="row d-flex justify-content-center">
+	<a class="col-2 btn btn-success" onclick="alert('That is the wrong answer! Try again.')">
+		{{ question.wrong_answer2 }}
+	</a>
+</div>
+<br>
+<div class="row d-flex justify-content-center">
+	<a class="col-2 btn btn-success" onclick="alert('That is the wrong answer! Try again.')">
+		{{ question.wrong_answer3 }}
+	</a>
+</div>
+<br>
+<div class="row d-flex justify-content-center">
+	<a class="col-2 btn btn-success" href="/lessons/success">
+		{{ question.correct_answer }}
+	</a>
+</div>
+<br>
+<div class="row d-flex justify-content-center">
+	<a class="col-2 btn btn-success" onclick="alert('That is the wrong answer! Try again.')">
+		{{ question.wrong_answer1 }}
+	</a>
+</div>
+
+<br>
+<div class="row d-flex justify-content-center">
+	<div class="col-1">
+		<a class="btn btn-secondary" href="/lessons/simulation/{{ lesson_id }}">Back</a>
+	</div>
+</div>
+{% endblock content %}

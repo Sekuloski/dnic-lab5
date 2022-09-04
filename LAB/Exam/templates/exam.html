@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %} Exam {% endblock %}
+
+{% block content %}
+<br>
+<div class="row">
+	<div class="col d-flex justify-content-center">
+		{{ question }}
+	</div>
+</div>
+<br>
+<form action="/exam/{{ question.id }}/answer/" method="POST">
+	{% csrf_token %}
+	<br>
+	<div class="row">
+		<div class="col d-flex justify-content-center">
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="q" id="q1" value="wrong">
+				<label class="form-check-label" for="q1">
+			    {{ question.wrong_answer3 }}
+	  			</label>
+			</div>
+		</div>
+	</div>
+
+	<br>
+	<div class="row">
+		<div class="col d-flex justify-content-center">
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="q" id="q2" value="correct">
+				<label class="form-check-label" for="q2">
+			    {{ question.correct_answer }}
+	  			</label>
+			</div>
+		</div>
+	</div>
+
+	<br>
+	<div class="row">
+		<div class="col d-flex justify-content-center">
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="q" id="q3" value="wrong">
+				<label class="form-check-label" for="q3">
+			    {{ question.wrong_answer1 }}
+	  			</label>
+			</div>
+		</div>
+	</div>
+
+	<br>
+	<div class="row">
+		<div class="col d-flex justify-content-center">
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="q" id="q4" value="wrong">
+				<label class="form-check-label" for="q4">
+			    {{ question.wrong_answer2 }}
+	  			</label>
+			</div>
+		</div>
+	</div>
+
+	<br>
+	<div class="row d-flex justify-content-center">
+		<div class="col-1">
+			<a class="btn btn-secondary" href="/">Back</a>
+		</div>
+		<div class="col-1">
+			<input class="orm-check-input" hidden type="text" value="{{ points }}" name="points">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+	</div>
+
+	
+</form>
+
+{% endblock content %}

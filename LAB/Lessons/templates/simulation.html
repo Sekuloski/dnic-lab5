@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Simulation {% endblock %}
+
+{% block content %}
+<br>
+<div class="row">
+	<div class="col d-flex justify-content-center">
+		{{ simulation }}
+	</div>
+</div>
+<br>
+<div class="row d-flex justify-content-center">
+	<div class="col-1">
+		<a class="btn btn-secondary" href="/lessons/{{ lesson_id }}">Back</a>
+	</div>
+	<div class="col-1">
+		<a class="btn btn-primary" href="/lessons/question/{{ lesson_id }}">Next</a>
+	</div>
+</div>
+{% endblock content %}

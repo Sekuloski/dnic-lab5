@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %} Lesson {% endblock %}
+
+{% block content %}
+<div class="row">
+	<div class="col d-flex justify-content-center">
+		<div class="display-5"> </div>
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col d-flex justify-content-center">
+		{{ lesson.name }}
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col d-flex justify-content-center">
+		{{ lesson.text }}
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col d-flex justify-content-center">
+		<iframe width="560" height="315" src="{{ lesson.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+		</iframe>
+	</div>
+</div>
+<br>
+<div class="row d-flex justify-content-center">
+	<div class="col-1">
+		<a class="btn btn-secondary" href="/lessons">Back</a>
+	</div>
+	<div class="col-1">
+		<a class="btn btn-primary" href="/lessons/simulation/{{ lesson.id }}">Next</a>
+	</div>
+</div>
+
+{% endblock content %}

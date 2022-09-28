@@ -25,7 +25,7 @@ def login_view(request):
 
 
 
-@login_required
+@login_required(login_url='/login_user/')
 def logout_view(request):
 	logout(request)
 	messages.success(request, 'You have been logged out.')

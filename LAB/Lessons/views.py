@@ -5,25 +5,25 @@ from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
 
 
-@login_required
+@login_required(login_url='/login_user/')
 def lesson(request, id):
 	lesson = Lesson.objects.get(pk=id)
 	return render(request, 'lesson.html', {'lesson': lesson})
 
 
-@login_required
+@login_required(login_url='/login_user/')
 def simulation(request, id):
 	lesson = Lesson.objects.get(pk=id)
 	return render(request, 'simulation.html', {'simulation': lesson.simulation, 'lesson_id': id})
 
 
-@login_required
+@login_required(login_url='/login_user/')
 def question(request, id):
 	lesson = Lesson.objects.get(pk=id)
 	return render(request, 'question.html', {'question': lesson.question, 'lesson_id': id})
 
 
-@login_required
+@login_required(login_url='/login_user/')
 def success(request):
 	return render(request, 'success.html', {})
 
